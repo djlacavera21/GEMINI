@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gemini-cloner"
-version = "0.1.0"
-description = "GEMINI Cloner Tool — public Git, web, and tree cloning with optional Gemini analysis."
+version = "0.2.0"
+description = "GEMINI Cloner Tool — owner-authorized phone clone with SMS consent link, plus public-source capture."
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.10"
