@@ -39,6 +39,7 @@ def detect_android() -> list[dict[str, Any]]:
                 "model": extras.get("model") or extras.get("device") or "android",
                 "product": extras.get("product"),
                 "usb_authorized": state == "device",
+                "transport": "wifi" if ":" in serial else "usb",
                 "tool": "adb",
             }
         )
@@ -54,7 +55,13 @@ def detect_ios() -> list[dict[str, Any]]:
         serial = serial.strip()
         if not serial:
             continue
-        info = {"platform": "ios", "serial": serial, "model": "iphone", "tool": "libimobiledevice"}
+        info = {
+            "platform": "ios",
+            "serial": serial,
+            "model": "iphone",
+            "tool": "libimobiledevice",
+            "transport": "usb",
+        }
         if shutil.which("ideviceinfo"):
             raw = _run(["ideviceinfo", "-u", serial, "-k", "ProductType"])
             if raw.returncode == 0 and raw.stdout.strip():
