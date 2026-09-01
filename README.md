@@ -1,7 +1,6 @@
 # GEMINI
 
-**Cloner Tool** — *ClnrToolzforDigitalFoolz*  
-Sir Big D & My Crude Digital Toolz
+**Cloner Tool** 
 
 GEMINI is an owner-authorized cloner with a push-button command-line menu.
 
